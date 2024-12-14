@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brief for the client</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>
+            Brief for the client</h1>
+        <p>Please fill out this form to help us better match your project requirements</p>
+    </header>
+
+    <section class="brief-form">
+        <form id="clientBriefForm" method="POST" action="">
+            <div class="question">
+                <label for="companyName">Company name:<span class="required">*</span></label>
+                <input type="text" id="companyName" name="companyName" required>
+            </div>
+
+            <div class="question">
+                <label for="phone">Phone number:<span class="required">*</span></label>
+                <input type="text" id="number" name="number" required>
+            </div>
+
+            <div class="question">
+                <label for="email">Your email:<span class="required">*</span></label>
+                <input type="text" id="email" name="email" required>
+            </div>
+
+            <div class="question">
+                <label for="projectType">Project type:<span class="required">*</span></label>
+                <select id="projectType" name="projectType">
+                    <option value="website">Web-site</option>
+                    <option value="ecommerce">Online store</option>
+                    <option value="mobileApp">Mobile app</option>
+                    <option value="branding">AI Software</option>
+                    <option value="branding">Security Software</option>
+                    <option value="branding">Data Analytics</option>
+                    <option value="branding">Business Intelligence Tools</option>
+                    <option value="branding">Other</option>
+                </select>
+            </div>
+
+            <div class="question">
+                <label for="deadline">Preferred DEADLINE. Run to...:<span class="required">*</span></label>
+                <input type="date" id="deadline" name="deadline" required>
+            </div>
+
+            <div class="question">
+                <label for="budget">Project budget:<span class="required">*</span></label>
+                <input type="number" id="budget" name="budget" required>
+            </div>
+
+            <div class="question">
+                <label for="features">Main functions or requirements for the project:<span class="required">*</span></label>
+                <textarea id="features" name="features" placeholder="Describe the main functions of the project
+                (What problems should the site solve?)" required></textarea>
+            </div>
+
+            <div class="question">
+                <label for="designPreference">Advantages of design:<span class="required">*</span></label>
+                <input type="text" id="designPreference" name="designPreference" placeholder="For example, colors, style, fonts, parallax, etc.">
+            </div>
+
+            <div class="question">
+                <label for="targetAudience">Target audience:<span class="required">*</span></label>
+                <input type="text" id="targetAudience" name="targetAudience" placeholder="Specify the target audience and other features, wishes">
+            </div>
+
+            <div class="question">
+                <label for="additionalNotes">Our manager will contact you for detailed information<span class="required">*</span></label>
+                <textarea id="additionalNotes" name="additionalNotes" placeholder="And also any other wishes or comments"></textarea>
+            </div>
+
+            <button type="submit">Send a brief</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; Oleh Lishchuk IT-company</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
