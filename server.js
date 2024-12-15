@@ -75,7 +75,7 @@ app.post('/submit', (req, res) => {
         budget,
         features,
         designPreference,
-        targetAudience.
+        targetAudience,
         additionalNotes
     } = req.body;
 
