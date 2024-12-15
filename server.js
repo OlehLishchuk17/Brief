@@ -66,23 +66,17 @@ app.get('/', (req, res) => {
 // Handle form submissions
 app.post('/submit', (req, res) => {
     const {
-        'company-name': companyName,
-        'contact-person': contactPerson,
-        position,
+        companyName,
         phone,
         email,
-        'project-name': projectName,
-        'project-type': projectType,
-        'project-goals': projectGoals,
-        'audience-characteristics': audienceCharacteristics,
-        'audience-needs': audienceNeeds,
-        competitors,
-        differentiators,
-        advantages,
+        projectType,
+        deadline,
+        audienceCharacteristics,
         budget,
-        'budget-constraints': budgetConstraints,
-        'project-timeline': projectTimeline,
-        milestones
+        features,
+        designPreference,
+        targetAudience.
+        additionalNotes
     } = req.body;
 
     // Insert form data into the database
@@ -93,8 +87,17 @@ app.post('/submit', (req, res) => {
             audience_characteristics, audience_needs, competitors, differentiators, advantages, 
             budget, budget_constraints, project_timeline, milestones
         ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
-        [companyName, contactPerson, position, phone, email, projectName, projectType, projectGoals, audienceCharacteristics,
-         audienceNeeds, competitors, differentiators, advantages, budget, budgetConstraints, projectTimeline, milestones],
+        [   companyName,
+            phone,
+            email,
+            projectType,
+            deadline,
+            audienceCharacteristics,
+            budget,
+            features,
+            designPreference,
+            targetAudience.
+            additionalNotes],
         (err) => {
             if (err) {
                 console.error(err.message);
@@ -193,6 +196,7 @@ app.get('/admin', (req, res) => {
         res.send('<h1>Access Denied: Incorrect password</h1>');
     }
 });
+
 
 // Start the server
 app.listen(PORT, () => {
