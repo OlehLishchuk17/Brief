@@ -17,7 +17,7 @@ document.getElementById('clientBriefForm').addEventListener('submit', function(e
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
-        // return response.json(); // Розбираємо відповідь у форматі JSON
+        return response.json(); // Розбираємо відповідь у форматі JSON
     })
     .then(data => console.log('Success:', data)) // Обробляємо успішну відповідь
     .catch(error => console.error('Error:', error)); // Обробляємо помилку
