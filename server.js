@@ -56,15 +56,17 @@ const db = new Database(DB_CONN, err => {
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(express.static(__dirname)); // Serve static files
 
 // Serve the form page
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index2.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Handle form submissions
 app.post('/submit', (req, res) => {
+    console.log(req.body)
     const {
         companyName,
         phone,
@@ -96,7 +98,7 @@ app.post('/submit', (req, res) => {
             budget,
             features,
             designPreference,
-            targetAudience.
+            targetAudience,
             additionalNotes],
         (err) => {
             if (err) {
