@@ -66,7 +66,6 @@ app.get('/', (req, res) => {
 
 // Handle form submissions
 app.post('/submit', (req, res) => {
-    console.log(req.body)
     const {
         companyName,
         phone,
