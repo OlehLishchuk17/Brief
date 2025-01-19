@@ -1,1 +1,0 @@
-CREATE DATABASE brief_db;
